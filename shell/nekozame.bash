@@ -7,6 +7,20 @@ NZ_SHARE="${XDG_DATA_HOME:-$HOME/.local/share}/nekozame"
 # nekozame's commands are in ~/.local/bin
 case ":$PATH:" in *":$HOME/.local/bin:"*) ;; *) PATH="$HOME/.local/bin:$PATH" ;; esac
 
+# nala in place of apt: `apt …` and `sudo apt …` run nala (apt-get and scripts are left
+# alone). NEKOZAME_NALA=off in ~/.bashrc, before this line, keeps plain apt
+if [ "${NEKOZAME_NALA:-on}" != off ] && command -v nala >/dev/null; then
+    apt() { command nala "$@"; }
+    sudo() {
+        if [ "${1:-}" = apt ]; then
+            shift
+            command sudo nala "$@"
+        else
+            command sudo "$@"
+        fi
+    }
+fi
+
 # fastfetch with the bubble logo (nekozame-fetch picks the picture or the text one)
 if [ -x "$HOME/.local/bin/nekozame-fetch" ]; then
     alias fastfetch=nekozame-fetch

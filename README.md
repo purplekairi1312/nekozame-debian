@@ -9,7 +9,7 @@ nekozame os's desktop and apps, for Debian GNU/Linux 13 (trixie) and newer.
 - Nerd Fonts everywhere, so icons show in the terminal and the bar. OpenDyslexic for the interface if you want it
 - fastfetch with the bubble logo, and a prompt in the same colours
 - Zen, ready for privacy: Dark Reader, uBlock Origin, Privacy Badger, LibRedirect, ClearURLs, Consent-O-Matic, DuckDuckGo, HTTPS-only, no telemetry, no WebRTC leaks. Zen in nekozame too
-- [nala](https://gitlab.com/volian/nala) for packages: parallel downloads and a clear list of what changes
+- [nala](https://gitlab.com/volian/nala) in place of apt: `apt` and `sudo apt` run nala, for parallel downloads and a clear list of what changes (`NEKOZAME_NALA=off` keeps plain apt)
 - Music production and emulators on request
 
 The theme and art come from [nekozame-os](https://github.com/purplekairi1312/nekozame-os) and nekozame-theme when you install, so each project keeps its own files. Only the Debian part lives here.

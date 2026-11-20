@@ -343,7 +343,7 @@ fi
 ok "fastfetch, with the bubble logo where the terminal shows pictures"
 
 # ---------------------------------------------------------------- the shell
-step "bash: the prompt, fastfetch and cava"
+step "bash: nala as apt, the prompt, fastfetch and cava"
 install -Dm0644 "$HERE/shell/nekozame.bash" "$CONF/nekozame/nekozame.bash"
 line='[ -f ~/.config/nekozame/nekozame.bash ] && . ~/.config/nekozame/nekozame.bash  # nekozame-debian'
 if ! grep -qF 'nekozame/nekozame.bash' "$HOME/.bashrc" 2>/dev/null; then
